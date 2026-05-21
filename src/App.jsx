@@ -24,11 +24,12 @@ export default function App() {
 
   // Render different dashboards based on user role
   if (user.role === 'admin') {
-    return <AdminDashboard user={user} onLogout={handleLogout} />;
-  } else if (user.role === 'seller') {
-    return <SellerDashboard user={user} onLogout={handleLogout} />;
-  } else {
-    // buyer
-    return <VendorHubApp user={user} onLogout={handleLogout} />;
-  }
+  return <AdminDashboard user={user} onLogout={handleLogout} />;
+}
+else if (user.role === 'shopkeeper') {
+  return <SellerDashboard user={user} onLogout={handleLogout} />;
+}
+else {
+  return <VendorHubApp user={user} onLogout={handleLogout} />;
+}
 }
